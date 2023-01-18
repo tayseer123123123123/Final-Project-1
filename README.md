@@ -21,17 +21,65 @@ As you can see in the code segments above I imported math to be able to get the 
 
 * An explanation of data abstraction as it is used in your program.
 - Include code segments that show where data is being stored and where data is being retrived and accompanying explanation.
+
+if shape == "1":
+        sidelength = input('Side Length:')
+        area = float(sidelength) * 2
+        print("Area = ", float(area))
+This code segment above shows the user inputting information and it being outputed with the area.
+        
+mode = sys.argv[1]
+
+Also you can see data abstraction being used with the command line argument above to choose the mode.
+
 - Identify what the abstracted data represents in your program
+
+In my program the abstracted data represents firsly the initial mode that the user will be using and secondly the input and output of the shapes and there volumes, areas, and surface areas.
+
 - Explain how the selected abstraction manages complexity in your program code (why your program code could not be written, or how it would be written differently, if you did not abstract the data in the way you did)
+
 * An explanation of procedural abstraction as it is used in your program.
-- Include a single code segment containing:
-* A procedure
-- with a parameter (i.e., takes an argument)
-* and includes an algorithm
-- that uses sequencing, selection, and iteration
-* and returns a value
-- that depends on the arguments given when the procedure is called
-* and is called from elsewhere in the program
+
+Procedural abstraction is used in my program to make seperate functions for each of the diffrent modes.
+
+if mode == "1":
+        print('Shapes: \n 1. Square \n 2. Circle \n 3. Triangle \n 4. Pentagon \n 5. Octagon \n 6. Rectangle \n 7. Rhombus \n 8. Trapezium \n 9. Kite \n 10. Polygons \n')
+        shape = input('Select shape: ')
+        area(shape)
+
+    if mode == "2":
+            print('Shape: \n 1. Cylinder \n 2. Sphere \n 3. Cone \n 4. Cuboid \n 5. Tetrahedron \n 6. Cube \n')
+            shapes = input('Select shape: ')        
+            surface_area(shapes)
+    if mode == "3":
+        print('Shape: \n 1. Cylinder \n 2. Sphere \n 3. Tetrahedron \n 4. Cone \n 5. Cuboid \n 6. Pyramid \n 7. Cube \n')
+        shapev = input('Select shape: ')
+        volume(shapev)
+    
+def area(shape):
+    
+    if shape == "1":
+        sidelength = input('Side Length:')
+        area = float(sidelength) * 2
+        print("Area = ", float(area))
+        #asking user if he wants to reenter dimentions
+        repeat = input('Would you like to re enter the dimentions? (Yes/No):')
+        if repeat == "Yes":
+            while True:
+                if (shape == "1"):
+                    sidelength = input('Side Length:')
+                area = float(sidelength) * 2
+                print("Area = ", float(area))
+                break
+        else:
+            exit()
+
 - Explain how the algorithm in the above code segment functions and why it is important for the purpose of your program
+
+This algorithm functions by first taking the mode from the command line argument, then it gives the user choices of the diffrent shapes, then after the user inputes the shape it runs the seperate function for the mode using paramaters. This helps the program run more efficiently.
+
 - Explain how the procedural abstraction helps to manage complexity in your program (be specific!)
-* Markdown syntax can be found here: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+Procedural abstraction helps to manage complecity in my program because you can easily change something inside a function or delete a function.
+
+
